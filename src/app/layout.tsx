@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lexend_Deca } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lexendDeca = Lexend_Deca({
+  variable: "--font-lexend-mega",
   subsets: ["latin"],
 });
 
@@ -25,9 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={lexendDeca.className}
       >
-        {children}
+        {/* Outer container - full screen */}
+        <div className="min-h-screen flex items-center justify-center p-4">
+          {/* Main container - card style like reference */}
+          <div className="h-[800px] w-[1000px] max-w-[1000px] border-4 border-border shadow-[10px_10px_0_0_#000] rounded-[5px] bg-background overflow-hidden">
+            {/* Content wrapper */}
+            <div>{children}</div>
+          </div>
+        </div>
       </body>
     </html>
   );
