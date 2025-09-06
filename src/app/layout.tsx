@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Lexend_Deca } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const lexendDeca = Lexend_Deca({
-  variable: "--font-lexend-mega",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
@@ -18,18 +19,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={lexendDeca.className}
-      >
-        {/* Outer container - full screen */}
-        <div className="min-h-screen flex items-center justify-center p-4">
-          {/* Main container - card style like reference */}
-          <div className="h-[800px] w-[1000px] max-w-[1000px] border-4 border-border shadow-[10px_10px_0_0_#000] rounded-[5px] bg-background overflow-hidden">
-            {/* Content wrapper */}
-            <div>{children}</div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${spaceGrotesk.className} bg-white`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* Outer container - full screen */}
+          <div className="min-h-screen flex items-center justify-center p-0 md:p-4 bg-white">
+            {/* Main container - windowed on desktop, fullscreen on mobile */}
+            <div className="w-full h-full md:h-[700px] md:w-[1000px] md:max-w-[1000px] bg-white overflow-hidden md:border-4 md:border-border md:shadow-[10px_10px_0_0_#000] md:rounded-[5px]">
+              {/* Content wrapper */}
+              <div className="h-full w-full max-w-6xl mx-auto px-4 md:px-12">
+                {children}
+              </div>
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
