@@ -3,7 +3,6 @@ import { IconType } from "react-icons";
 interface Skill {
   text: string;
   Icon: IconType;
-  color: string;
 }
 
 interface MarqueeProps {
@@ -30,7 +29,7 @@ export default function Marquee({ items, skills }: MarqueeProps) {
           key={`${item.text}-${index}`}
           className="flex items-center mx-6 flex-shrink-0"
         >
-          <item.Icon className={`text-xl ${item.color}`} />
+          <item.Icon className={`text-xl`} />
           <span className="text-lg font-heading ml-2">{item.text}</span>
         </div>
       );
@@ -39,7 +38,7 @@ export default function Marquee({ items, skills }: MarqueeProps) {
 
   const containerClass = skills
     ? "relative flex w-full overflow-x-hidden border-t-2 border-b-2 border-border text-foreground font-base"
-    : "relative flex w-full overflow-x-hidden border-b-2 border-t-2 border-border bg-secondary-background text-foreground font-base";
+    : "relative flex w-full overflow-x-hidden border-b-2 border-t-2 border-border bg-secondary-background  text-foreground font-base";
 
   const paddingClass = skills ? "py-3" : "py-6";
 

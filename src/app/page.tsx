@@ -10,9 +10,6 @@ export default function Home() {
       <div className="flex-1">
         <HeroSection />
       </div>
-
-      {/* Bottom border line */}
-      <div className="border-b-2 border-border"></div>
     </div>
   );
 }

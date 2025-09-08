@@ -4,8 +4,8 @@ export default function RootLoading() {
   return (
     <div className="flex flex-col h-full">
       {/* Header bar skeleton */}
-      <div className="w-full px-4">
-        <div className="mx-auto mt-4 flex h-[80px] items-center justify-between px-6 bg-secondary-background border-4 border-border shadow-shadow">
+      <div className="w-full">
+        <div className="mx-auto mt-4 flex h-[80px] items-center justify-between px-4 md:px-12 bg-secondary-background border-4 border-border shadow-shadow">
           <div className="hidden md:flex items-center gap-4">
             <Skeleton className="h-6 w-16" />
             <Skeleton className="h-6 w-20" />
@@ -19,7 +19,7 @@ export default function RootLoading() {
       </div>
 
       {/* Hero skeleton */}
-      <section className="flex-1 py-16 px-12">
+      <section className="flex-1 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left text block */}
           <div className="space-y-4">
@@ -46,7 +46,7 @@ export default function RootLoading() {
       </section>
 
       {/* Skills marquee skeleton */}
-      <div className="-mx-6 md:-mx-12">
+      <div className="-mx-4 md:-mx-12">
         <div className="flex gap-3 overflow-hidden border-t-2 border-b-2 border-border py-3 px-4">
           {Array.from({ length: 10 }).map((_, i) => (
             <Skeleton key={i} className="h-8 w-24" />

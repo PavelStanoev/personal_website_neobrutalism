@@ -4,8 +4,8 @@ export default function ProjectsLoading() {
   return (
     <div className="flex flex-col h-full">
       {/* Header placeholder */}
-      <div className="w-full px-4">
-        <div className="mx-auto mt-4 flex h-[80px] items-center justify-between px-6 bg-secondary-background border-4 border-border shadow-shadow">
+      <div className="w-full">
+        <div className="mx-auto mt-4 flex h-[80px] items-center justify-between px-4 md:px-12 bg-secondary-background border-4 border-border shadow-shadow">
           <div className="hidden md:flex items-center gap-4">
             <Skeleton className="h-6 w-16" />
             <Skeleton className="h-6 w-20" />
@@ -19,7 +19,7 @@ export default function ProjectsLoading() {
       </div>
 
       <div className="flex-1 pt-8 md:pt-10 pb-10">
-        <div className="mb-2 max-w-[880px]">
+        <div className="mb-8">
           <Skeleton className="h-9 w-40" />
           <Skeleton className="h-4 w-96 mt-2" />
         </div>

@@ -28,9 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* Outer container - full screen */}
-          <div className="min-h-screen flex items-center justify-center p-0 md:p-4 bg-white">
+          <div className="min-h-screen flex items-start lg:items-center justify-center p-0 md:p-4 bg-background dark:bg-background">
             {/* Main container - windowed on desktop, fullscreen on mobile */}
-            <div className="w-full h-full md:h-[700px] md:w-[1000px] md:max-w-[1000px] bg-white overflow-hidden md:border-4 md:border-border md:shadow-[10px_10px_0_0_#000] md:rounded-[5px]">
+            <div className="w-full min-h-screen md:min-h-0 md:min-h-[700px] lg:h-[700px] md:w-[1000px] md:max-w-[1000px] bg-background dark:bg-secondary-background overflow-hidden md:border-4 md:border-border md:shadow-[10px_10px_0_0_#000] md:rounded-[5px]">
               {/* Content wrapper */}
               <div className="h-full w-full max-w-6xl mx-auto px-4 md:px-12">
                 {children}

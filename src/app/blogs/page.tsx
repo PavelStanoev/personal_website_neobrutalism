@@ -40,7 +40,7 @@ export default function Blogs() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="flex-1 pt-8 md:pt-10 pb-10 flex flex-col">
-        <div className="mb-4 max-w-3xl">
+        <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">Blogs</h1>
           <p className="text-foreground/70">
             Here are some of my latest thoughts and tutorials.
@@ -51,7 +51,7 @@ export default function Blogs() {
         <div className="flex-1 flex flex-col">
           {/* Blog Posts Grid */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               {currentPosts.map((post, index) => (
                 <BlogCard
                   key={index}

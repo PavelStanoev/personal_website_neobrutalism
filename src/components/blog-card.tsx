@@ -29,17 +29,17 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
   return (
     <Link href={`/blogs/${slug}`}>
-      <div className="bg-main/80 border-4 border-border shadow-[8px_8px_0px_0px_#000] rounded-none p-6 hover:shadow-[12px_12px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:z-10 transition-all duration-200 ease-out relative cursor-pointer h-[150px] flex flex-col">
+      <div className="bg-main/80 dark:bg-main/80 border-4 border-border shadow-[8px_8px_0px_0px_#000] rounded-none p-6 hover:shadow-[12px_12px_0px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:z-10 transition-all duration-200 ease-out relative cursor-pointer h-[180px] flex flex-col">
         {/* Blog Title */}
-        <h3 className="text-xl font-bold text-foreground mb-3 ">{title}</h3>
+        <h3 className="text-xl font-bold text-black dark:text-white mb-2">{title}</h3>
 
         {/* Blog Description with Tooltip */}
-        <div className="flex-1 mb-4">
+        <div className="flex-1 mb-3">
           {isLongDescription ? (
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <p className="text-foreground text-sm leading-relaxed  cursor-pointer">
+                  <p className="text-black dark:text-white text-sm leading-relaxed cursor-pointer">
                     {truncatedDescription}
                   </p>
                 </TooltipTrigger>
@@ -49,14 +49,14 @@ const BlogCard: React.FC<BlogCardProps> = ({
               </Tooltip>
             </TooltipProvider>
           ) : (
-            <p className="text-foreground text-sm leading-relaxed ">
+            <p className="text-black dark:text-white text-sm leading-relaxed">
               {description}
             </p>
           )}
         </div>
 
         {/* Date - Always at bottom */}
-        <div className="flex items-center gap-2 text-sm text-foreground/70 mt-auto">
+        <div className="flex items-center gap-2 text-sm text-black/80 dark:text-white/80 mt-auto">
           <Calendar size={16} />
           <span>{date}</span>
         </div>
